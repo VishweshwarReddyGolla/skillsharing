@@ -22,9 +22,11 @@ The server will listen on `process.env.PORT` (default 5000).
 - Build Command: `npm install`
 - Start Command: `npm start`
 - Add environment variables in Render for `MONGO_URI` and `JWT_SECRET`.
+- Set `NODE_ENV=production` in Render to enable production behavior.
+- (Recommended) Set `ALLOWED_ORIGIN` to your frontend origin (e.g., `https://your-app.vercel.app`) to restrict CORS.
 - A `render.yaml` file is included at the repository root to help define the service; add your repo details there if you want Render to auto-deploy.
 
-> Note: Ensure CORS is configured (the server currently uses a permissive `cors()`), and that `VITE_API_URL` on the frontend points to your Render service URL.
+> Note: The server now reads `ALLOWED_ORIGIN` and applies it to CORS; set `VITE_API_URL` on the frontend to point to your Render service URL.
 
 ## API Overview
 

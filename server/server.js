@@ -12,7 +12,8 @@ const errorHandler = require('./middleware/errorHandler');
 dotenv.config();
 
 const app = express();
-app.use(cors());
+const allowedOrigin = process.env.ALLOWED_ORIGIN || '*';
+app.use(cors({ origin: allowedOrigin }));
 app.use(express.json());
 
 // Connect to DB
