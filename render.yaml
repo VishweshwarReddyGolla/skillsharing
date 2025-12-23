@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: skillswap-server
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    repo: "" # Add your repo URL here if you want Render to auto-deploy from this repo
+    envVars:
+      - key: MONGO_URI
+        value: ""
+      - key: JWT_SECRET
+        value: ""
